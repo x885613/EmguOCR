@@ -1,0 +1,14 @@
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\IMG.exe
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\IMG.pdb
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.Form1.resources
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.Properties.Resources.resources
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.exe
+c:\users\user\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.pdb
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\Emgu.CV.World.dll
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\Emgu.CV.World.xml
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\Emgu.CV.UI.dll
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\ZedGraph.dll
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\Emgu.CV.UI.xml
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\bin\Debug\IMG.exe.config
+C:\Users\User\documents\visual studio 2012\Projects\IMG\IMG\obj\Debug\IMG.csprojResolveAssemblyReference.cache
