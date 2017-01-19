@@ -5,9 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace IMG
@@ -21,14 +19,14 @@ namespace IMG
 
         private readonly static string PROJ_PATH = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
         private readonly static string SOURCE_IMG_PATH = PROJ_PATH + "\\receipt.jpg";
-        private readonly static string FINISH_IMG_PATH = PROJ_PATH + "\\finish.jpg";
+        private readonly static string FINISH_IMG_PATH = PROJ_PATH + "\\finish.bmp";
         private readonly static string OCR_FOLDER_PATH = PROJ_PATH + "\\SeparateIMG";
 
-        private readonly static Gray DRAW_COLOR = new Gray(150);
+        private readonly static Gray DRAW_COLOR = new Gray(150); //畫ROI的線顏色
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //getBackgroundIMG();
+            getBackgroundIMG();
 
             separateIMG();
         }
@@ -80,7 +78,6 @@ namespace IMG
                     count = 0;
                     for (int j = 0; j < img.Height; j++)
                     {
-                        //不清楚為何圖片除了黑色會有其他顏色
                         if (img[j, i].Intensity == 0)
                         {
                             count++;
@@ -93,7 +90,7 @@ namespace IMG
                 count = 0;
                 int idxLeft = 0; //左邊邊界
                 int idxRight = 0; //右邊邊界
-                int Threshold = 5;
+                int Threshold = 5; //過濾掉雜訊，將小型的黑色區塊視而不見
                 for (int i = 0; i < his.Length; i++)
                 {
                     if (his[i] > 0)
@@ -113,7 +110,7 @@ namespace IMG
                                     for (int y = idxLeft; y <= idxRight; y++)
                                     {
                                         byte color = img.Data[x, y, 0];
-                                        if (DRAW_COLOR.Intensity == color)
+                                        if (DRAW_COLOR.Intensity == color) //DRAW_COLOR是畫ROI的線，要視而不見
                                         {
                                             separateIMG.Data[x, y - idxLeft, 0] = 255;
                                         }
@@ -261,7 +258,7 @@ namespace IMG
             img = img.SmoothMedian(3);
             img = img.Erode(1);
             img.Save(FINISH_IMG_PATH);
-            //CvInvoke.Imwrite(finishImgPath, img);
+            //CvInvoke.Imwrite(FINISH_IMG_PATH, img);
         }
 
         private Image<Gray, Byte> removeBackground()
